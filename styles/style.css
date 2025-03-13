@@ -28,7 +28,7 @@ figure {
 :root {
   --bg-color: #ffffff; /* Белый фон */
   --text-color: #F3EFEC; /* Цвет текста для светлой темы */
-  --accent-color: #ff5722; /* Акцентный цвет (оранжевый) */
+  --accent-color: #FFAB6B; /* Акцентный цвет (оранжевый) */
   --main-font: 'STIX Two Text', serif; /* Основной шрифт */
 }
 
@@ -36,7 +36,7 @@ figure {
 .theme_dark {
   --bg-color: #171717; /* Темный фон */
   --text-color: #B3B3B3; /* Цвет текста для темной темы */
-  --accent-color: #03a9f4; /* Акцентный цвет (голубой) */
+  --accent-color: transparent; /* Акцентный цвет (голубой) */
 }
 
 /* Стили для всей страницы */
@@ -103,7 +103,7 @@ figure {
 /* Стили для текстовых блоков */
 .content__text-block {
   font-size: 18px; /* Размер шрифта для текстовых блоков */
-  line-height: 1.3; /* Интерлиньяж */
+  line-height: 1.4; /* Межстрочный интервал */
   margin-bottom: 40px; /* Отступ между текстовыми блоками */
 }
 
@@ -118,6 +118,25 @@ figure {
 /* Нижний отступ для всех абзацев, кроме последнего в блоке */
 .content__text-block .content__paragraph:not(:last-child) {
   margin-bottom: 1.5em; /* Отступ между абзацами */
+}
+
+/* Стили для буквицы */
+.content__text-block_type_first-lettered .content__paragraph:first-of-type::first-letter {
+  font-family: 'Raleway', sans-serif; /* Шрифт Raleway */
+  font-size: 36px; /* Размер шрифта для буквицы */
+  color: #ffffff; /* Цвет текста белый */
+  background-color: var(--accent-color); /* Фон для буквицы */
+  padding: 3px 3px; /* Внутренние отступы */
+  margin-right: 1px; /* Правый внешний отступ */
+  display: inline-block; /* Блочно-строчный элемент */
+  line-height: 1; /* Корректировка межстрочного интервала */
+  border-radius: 1px; /* Радиус скругления */
+  border: 1px solid transparent; /* Прозрачная рамка по умолчанию */
+}
+
+/* Стили для темной версии буквицы */
+.theme_dark .content__text-block_type_first-lettered .content__paragraph:first-of-type::first-letter {
+  border-color: #B3B3B3; /* Цвет рамки для темной темы */
 }
 
 /* Стили для ссылок */
@@ -144,11 +163,11 @@ figure {
 /* Стили для списка */
 .content__list {
   list-style-type: none; /* Отключаем стандартные маркеры */
-  padding-left: 40px; /* Левый отступ (inline-start) */
   margin-top: 1.5em; /* Отступ сверху */
   color: var(--text-color); /* Цвет текста из переменных */
   font-family: 'Raleway', sans-serif; /* Шрифт Raleway */
   line-height: 1.3;
+  text-align: left;
   font-size: 18px; /* Размер шрифта */
 }
 
@@ -173,8 +192,14 @@ figure {
   transform: translateY(-50%); /* Точная центровка */
   width: 15px; /* Ширина маркера */
   height: 15px; /* Высота маркера */
-  background-image: url('./images/marker-light.svg'); /* Фоновая картинка */
+  background-image: url('/images/marker-light.svg'); /* Фоновая картинка */
   background-size: cover; /* Подгоняем под размер квадрата */
   background-repeat: no-repeat; /* Без повтора */
   background-position: center; /* Центрируем фон */
+}
+
+
+/* Маркеры для темной темы */
+.theme_dark .content__list li::before {
+  background-image: url('/images/marker-dark.svg'); /* Фоновая картинка для темной темы */
 }
