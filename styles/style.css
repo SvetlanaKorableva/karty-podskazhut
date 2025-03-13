@@ -103,7 +103,7 @@ figure {
 /* Стили для текстовых блоков */
 .content__text-block {
   font-size: 18px; /* Размер шрифта для текстовых блоков */
-  line-height: 1.6; /* Интерлиньяж */
+  line-height: 1.3; /* Интерлиньяж */
   margin-bottom: 40px; /* Отступ между текстовыми блоками */
 }
 
@@ -128,12 +128,53 @@ figure {
   text-decoration: underline; /* Подчеркивание ссылок */
 }
 
+/* Стили для цитаты */
+.content__blockquote {
+  font-family: 'Raleway', sans-serif; /* Шрифт Raleway */
+  font-size: 18px; /* Размер шрифта */
+  font-style: italic; /* Курсив */
+  color: var(--text-color); /* Цвет текста из переменных */
+  width: 75%; /* Ширина — 75% от родительского элемента */
+  margin: 0 auto 1.5em; /* Центрирование по горизонтали и нижний отступ */
+  line-height: 1.8;
+  line-height: 1.4;
+  text-align: left; /* Выравнивание текста по центру */
+}
+
 /* Стили для списка */
 .content__list {
-  list-style-type: disc; /* Ромбики для маркеров */
-  padding-left: 20px; /* Отступ слева для списка */
+  list-style-type: none; /* Отключаем стандартные маркеры */
+  padding-left: 40px; /* Левый отступ (inline-start) */
   margin-top: 1.5em; /* Отступ сверху */
   color: var(--text-color); /* Цвет текста из переменных */
   font-family: 'Raleway', sans-serif; /* Шрифт Raleway */
+  line-height: 1.3;
   font-size: 18px; /* Размер шрифта */
+}
+
+/* Убираем маркеры у списка */
+.content__list li {
+  position: relative; /* Для позиционирования псевдоэлемента */
+  padding-left: 25px; /* Отступ слева для текста */
+  margin-bottom: 10px; /* Нижний отступ между пунктами */
+}
+
+/* Убираем отступ у последнего пункта списка */
+.content__list li:last-child {
+  margin-bottom: 0; /* Убираем отступ для последнего пункта */
+}
+
+/* Кастомные маркеры через псевдоэлемент */
+.content__list li::before {
+  content: ''; /* Создаем псевдоэлемент */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 0; /* Размещаем слева */
+  top: 50%; /* Центрируем по вертикали */
+  transform: translateY(-50%); /* Точная центровка */
+  width: 15px; /* Ширина маркера */
+  height: 15px; /* Высота маркера */
+  background-image: url('./images/marker-light.svg'); /* Фоновая картинка */
+  background-size: cover; /* Подгоняем под размер квадрата */
+  background-repeat: no-repeat; /* Без повтора */
+  background-position: center; /* Центрируем фон */
 }
