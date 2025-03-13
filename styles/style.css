@@ -1,6 +1,9 @@
+/* Общие настройки */
 *,
 *::before,
 *::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -19,4 +22,118 @@ ol,
 li,
 figure {
   margin: 0;
+}
+
+/* Переменные для светлой темы */
+:root {
+  --bg-color: #ffffff; /* Белый фон */
+  --text-color: #F3EFEC; /* Цвет текста для светлой темы */
+  --accent-color: #ff5722; /* Акцентный цвет (оранжевый) */
+  --main-font: 'STIX Two Text', serif; /* Основной шрифт */
+}
+
+/* Переменные для темной темы */
+.theme_dark {
+  --bg-color: #171717; /* Темный фон */
+  --text-color: #B3B3B3; /* Цвет текста для темной темы */
+  --accent-color: #03a9f4; /* Акцентный цвет (голубой) */
+}
+
+/* Стили для всей страницы */
+.page {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--main-font);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Стили для секций с отступами */
+.content-section {
+  padding-left: 5vi; /* Левый отступ */
+  padding-right: 5vi; /* Правый отступ */
+  text-align: center; /* Выравнивание содержимого по центру */
+}
+
+/* Стили для шапки */
+.header {
+  padding-top: 10vw; /* Отступ сверху (10% ширины) */
+  text-align: center; /* Выравнивание содержимого шапки по центру */
+}
+
+/* Стили для заголовка в шапке */
+.header .header__title {
+  font-family: var(--main-font) !important;
+  font-size: 120px !important; /* Фиксированный размер шрифта */
+  line-height: 1.2; /* Интерлиньяж */
+  text-align: center; /* Выравнивание текста по центру */
+  margin-bottom: 20px; /* Фиксированный отступ снизу */
+  color: var(--text-color); /* Цвет текста из переменных */
+  width: 100%; /* Ширина заголовка равна ширине родителя */
+  display: block; /* Убедимся, что заголовок является блочным элементом */
+}
+
+/* Стили для заголовков внутри <main> */
+.content .content__title {
+  font-family: var(--main-font) !important;
+  font-size: 30px !important; /* Фиксированный размер шрифта */
+  margin-top: 7vw; /* Верхний отступ (7% ширины) */
+  margin-bottom: 2.5vw; /* Нижний отступ (2.5% ширины) */
+  text-align: center; /* Выравнивание текста по центру */
+  color: var(--text-color); /* Цвет текста из переменных */
+  width: 100%; /* Ширина заголовка равна ширине родителя */
+  display: block; /* Убедимся, что заголовок является блочным элементом */
+}
+
+/* Адаптация под мобильные устройства */
+@media (max-width: 768px) {
+  .header .header__title {
+    font-size: 80px !important; /* Уменьшаем размер шрифта */
+    margin-bottom: 1rem; /* Меньший отступ снизу на мобильных */
+  }
+
+  .content .content__title {
+    font-size: 24px !important; /* Уменьшаем размер шрифта */
+    margin-top: 5vw; /* Уменьшаем верхний отступ */
+    margin-bottom: 2vw; /* Уменьшаем нижний отступ */
+  }
+}
+
+/* Стили для текстовых блоков */
+.content__text-block {
+  font-size: 18px; /* Размер шрифта для текстовых блоков */
+  line-height: 1.6; /* Интерлиньяж */
+  margin-bottom: 40px; /* Отступ между текстовыми блоками */
+}
+
+/* Стили для абзацев */
+.content__paragraph {
+  font-family: 'Raleway', sans-serif; /* Шрифт Raleway */
+  font-size: 18px; /* Размер шрифта */
+  color: var(--text-color); /* Цвет текста из переменных */
+  text-align: justify; /* Выравнивание текста по ширине */
+}
+
+/* Нижний отступ для всех абзацев, кроме последнего в блоке */
+.content__text-block .content__paragraph:not(:last-child) {
+  margin-bottom: 1.5em; /* Отступ между абзацами */
+}
+
+/* Стили для ссылок */
+.content__paragraph a {
+  font-family: 'Raleway', sans-serif; /* Шрифт Raleway */
+  font-size: 18px; /* Размер шрифта */
+  color: inherit; /* Наследование цвета текста от родителя */
+  text-decoration: underline; /* Подчеркивание ссылок */
+}
+
+/* Стили для списка */
+.content__list {
+  list-style-type: disc; /* Ромбики для маркеров */
+  padding-left: 20px; /* Отступ слева для списка */
+  margin-top: 1.5em; /* Отступ сверху */
+  color: var(--text-color); /* Цвет текста из переменных */
+  font-family: 'Raleway', sans-serif; /* Шрифт Raleway */
+  font-size: 18px; /* Размер шрифта */
 }
