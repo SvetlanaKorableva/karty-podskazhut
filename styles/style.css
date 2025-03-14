@@ -374,3 +374,19 @@ figure {
   cursor: default; /* Меняем курсор */
 }
 
+/* Стили для футера */
+.footer {
+  border-top: 1px solid currentColor; /* Линия на всю ширину страницы */
+  margin-top: 10vw; /* Отступ сверху (10% ширины) */
+  padding: 2.5vw; /* Внутренний отступ со всех сторон (2.5%) */
+  text-align: center; /* Выравнивание текста по центру */
+  color: var(--text-color); /* Цвет текста из переменных */
+}
+
+/* Стили для текста в футере */
+.footer__copyright {
+  font-family: 'Raleway', sans-serif; /* Шрифт Raleway */
+  font-size: 18px; /* Фиксированный размер шрифта */
+  color: inherit; /* Наследование цвета текста */
+  margin: 0; /* Убираем внешние отступы */
+}
