@@ -12,9 +12,38 @@
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body class="page theme_dark">
-    <header class="header content-section">
+    
       <!-- Заголовок в шапке -->
       <h1 class="header__title">Карты подскажут</h1>
+      <header class="header content-section">
+      <!-- Навигация -->
+      <nav class="header__menu content-section">
+        <!-- Логотип -->
+        <div class="header__logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="135" height="25">
+            <use href="./images/logo.svg#logo"></use>
+          </svg>
+        </div>
+    
+        <!-- Переключатель тем -->
+        <div class="header__theme-toggler">
+          <ul>
+            <li>
+              <button
+                class="header__theme-button header__theme-button_type_dark header__theme-button_is-active"
+                disabled
+              >
+                Темная
+              </button>
+            </li>
+            <li>
+              <button class="header__theme-button header__theme-button_type_light">
+                Светлая
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </header>
     <main class="content content-section">
       <!-- Первый блок -->
@@ -111,10 +140,10 @@
           >.
         </p>
       </div>
-      
+
       <article class="content__card">
         <h3 class="content__card-title heading">
-          Use an old <span class="colored-text">idea</span>
+          Use an <span class="colored-text"> old idea</span>
         </h3>
         <p class="content__card-subtitle">
           Воспользуйтесь старой идеей
@@ -134,7 +163,6 @@
     </main>
     <footer class="footer"></footer>
 
-    <!-- Раскомментируйте строчку ниже, когда вёрстка будет готова. Если вы назвали все классы. как нужно, переключатель темы будет работать -->
-    <!-- <script src="./scripts/theme-changer.js"></script> -->
+    <script src="./scripts/theme-changer.js"></script> 
   </body>
 </html>

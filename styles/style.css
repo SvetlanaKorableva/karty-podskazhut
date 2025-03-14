@@ -27,7 +27,7 @@ figure {
 /* Переменные для светлой темы */
 :root {
   --bg-color: #ffffff; /* Белый фон */
-  --text-color: #F3EFEC; /* Цвет текста для светлой темы */
+  --text-color: #312A4E; /* Цвет текста для светлой темы */
   --accent-color: #FFAB6B; /* Акцентный цвет (оранжевый) */
   --main-font: 'STIX Two Text', serif; /* Основной шрифт */
 }
@@ -63,12 +63,13 @@ figure {
 }
 
 /* Стили для заголовка в шапке */
-.header .header__title {
+.header__title {
   font-family: var(--main-font) !important;
   font-size: 120px !important; /* Фиксированный размер шрифта */
   line-height: 1.2; /* Интерлиньяж */
   text-align: center; /* Выравнивание текста по центру */
-  margin-bottom: 20px; /* Фиксированный отступ снизу */
+  padding-bottom: 40px; /* Фиксированный отступ снизу */
+  padding-top: 140px;
   color: var(--text-color); /* Цвет текста из переменных */
   width: 100%; /* Ширина заголовка равна ширине родителя */
   display: block; /* Убедимся, что заголовок является блочным элементом */
@@ -124,19 +125,22 @@ figure {
 .content__text-block_type_first-lettered .content__paragraph:first-of-type::first-letter {
   font-family: 'Raleway', sans-serif; /* Шрифт Raleway */
   font-size: 36px; /* Размер шрифта для буквицы */
-  color: #ffffff; /* Цвет текста белый */
+  color: #312A4E; /* Цвет текста белый */
   background-color: var(--accent-color); /* Фон для буквицы */
   padding: 3px 3px; /* Внутренние отступы */
   margin-right: 1px; /* Правый внешний отступ */
   display: inline-block; /* Блочно-строчный элемент */
   line-height: 1; /* Корректировка межстрочного интервала */
   border-radius: 1px; /* Радиус скругления */
+  font-weight: bold;
   border: 1px solid transparent; /* Прозрачная рамка по умолчанию */
 }
 
 /* Стили для темной версии буквицы */
 .theme_dark .content__text-block_type_first-lettered .content__paragraph:first-of-type::first-letter {
   border-color: #B3B3B3; /* Цвет рамки для темной темы */
+  color: #B3B3B3;
+  font-weight: bold;
 }
 
 /* Стили для ссылок */
@@ -271,10 +275,10 @@ figure {
 .colored-text::after {
   content: ''; /* Создаем псевдоэлемент */
   position: absolute; /* Абсолютное позиционирование */
-  left: -10%; /* Расширяем полосу за пределы текста */
-  right: -10%; /* Расширяем полосу за пределы текста */
-  bottom: 50%; /* Размещаем по центру по вертикали */
-  height: 1.2em; /* Высота полосы (привязана к размеру текста) */
+  left: -2%; /* Расширяем полосу за пределы текста */
+  right: -2%; /* Расширяем полосу за пределы текста */
+  bottom: 25%; /* Размещаем по центру по вертикали */
+  height: 25%; /* Высота полосы (привязана к размеру текста) */
   background-color: var(--accent-color); /* Цвет фона из переменных */
   z-index: -1; /* Отправляем на задний план */
 }
@@ -283,3 +287,90 @@ figure {
 .theme_dark .content__card {
   border-color: #B3B3B3; /* Цвет обводки для темной темы */
 }
+
+/* Стили для шапки */
+.header {
+  border-top: 1px solid currentColor; /* Верхнее подчеркивание */
+  border-bottom: 1px solid currentColor; /* Нижнее подчеркивание */
+  padding-top: 15px; /* Внутренний отступ сверху */
+  padding-bottom: 20px; /* Внутренний отступ снизу */
+}
+
+/* Стили для заголовка в шапке */
+.header__title {
+  margin: 0; /* Убираем внешние отступы */
+  font-family: 'Raleway', sans-serif; /* Шрифт Raleway */
+  font-size: 36px; /* Размер шрифта */
+  color: var(--text-color); /* Цвет текста из переменных */
+  text-align: center; /* Выравнивание текста по центру */
+}
+
+/* Стили для контейнера навигации */
+.header__menu {
+  display: flex; /* Флекс-контейнер */
+  justify-content: space-between; /* Размещение элементов по краям */
+  align-items: center; /* Выравнивание по вертикали */
+  padding-left: 5vi; /* Левый отступ */
+  padding-right: 5vi; /* Правый отступ */
+  margin-top: 10px; /* Отступ сверху после заголовка */
+}
+
+/* Стили для логотипа */
+.header__logo svg {
+  display: block; /* Убираем лишние отступы */
+  width: 135px; /* Ширина SVG */
+  height: 25px; /* Высота SVG */
+}
+
+/* Стили для контейнера переключателя тем */
+.header__theme-toggler {
+  display: flex; /* Флекс-контейнер */
+  gap: 20px; /* Расстояние между кнопками */
+}
+
+/* Сброс стилей списка */
+.header__theme-toggler ul {
+  list-style: none; /* Убираем маркеры */
+  margin: 0; /* Убираем внешние отступы */
+  padding: 0; /* Убираем внутренние отступы */
+  display: flex; /* Флекс-строка */
+  gap: 20px; /* Расстояние между кнопками */
+}
+
+/* Стили для кнопок */
+.header__theme-button {
+  font-family: inherit; /* Наследование шрифта */
+  font-size: 16px; /* Размер шрифта */
+  color: var(--text-color); /* Цвет текста из переменных */
+  text-decoration: none; /* Убираем подчеркивание */
+  background: none; /* Убираем фон */
+  border: none; /* Убираем границы */
+  cursor: pointer; /* Курсор при наведении */
+  position: relative; /* Для позиционирования псевдоэлемента */
+  padding: 5px 0; /* Внутренние отступы */
+}
+
+/* Подчеркивание для кнопки "Светлая" */
+.header__theme-button_type_light::after {
+  content: ''; /* Создаем псевдоэлемент */
+  position: absolute; /* Абсолютное позиционирование */
+  left: -5%; /* Начинаем с левого края текста */
+  right: -5%; /* Заканчиваем у правого края текста */
+  bottom: 25%; /* Размещаем полосу на уровне 25% от нижней границы */
+  height: 25%; /* Высота полосы — 25% высоты текста */
+  background-color: var(--accent-color); /* Цвет фона из переменных */
+  z-index: -1; /* Отправляем на задний план */
+}
+
+/* Подчеркивание при наведении */
+.header__theme-button:hover {
+  text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+/* Активная кнопка */
+.header__theme-button_is-active {
+  font-weight: bold; /* Жирный шрифт */
+  pointer-events: none; /* Отключаем клики */
+  cursor: default; /* Меняем курсор */
+}
+
