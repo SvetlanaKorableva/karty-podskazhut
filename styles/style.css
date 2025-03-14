@@ -203,3 +203,83 @@ figure {
 .theme_dark .content__list li::before {
   background-image: url('/images/marker-dark.svg'); /* Фоновая картинка для темной темы */
 }
+
+/* Стили для контейнера figure */
+.content__figure {
+  position: relative; /* Для позиционирования */
+  width: calc(100% + 10vi); /* Ширина контейнера: 100% + сумма боковых полей (5vi слева + 5vi справа) */
+  margin-left: -5vi; /* Сдвиг влево на размер левого поля */
+  margin-top: 7vw; /* Верхний внешний отступ */
+  margin-bottom: 7vw; /* Нижний внешний отступ */
+}
+
+/* Стили для изображения */
+.content__picture {
+  display: block; /* Убираем лишние отступы */
+  width: 100%; /* Ширина изображения равна ширине родителя */
+  height: auto; /* Сохраняем пропорции */
+  object-fit: cover; /* Обрезка изображения при необходимости */
+}
+
+/* Стили для подписи */
+.content__picture-caption {
+  text-align: center; /* Выравнивание текста по центру */
+  font-family: 'Raleway', sans-serif; /* Шрифт Raleway */
+  font-size: 16px; /* Размер шрифта */
+  color: var(--text-color); /* Цвет текста из переменных */
+  margin-top: 10px; /* Отступ сверху */
+  padding-bottom: 15px;
+  border-bottom: 1px solid #B3B3B3; /* Линия в 1 пиксель */
+  padding-top: 10px; /* Отступ сверху после линии */
+}
+
+/* Стили для контейнера карточки */
+.content__card {
+  position: relative; /* Для позиционирования */
+  aspect-ratio: 4 / 3; /* Пропорции 4:3 */
+  margin-top: 7vw; /* Верхний отступ */
+  border: 1px solid currentColor; /* Обводка в цвет текста */
+  text-align: center; /* Выравнивание содержимого по центру */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Внутренние отступы */
+}
+
+/* Стили для заголовка карточки */
+.content__card-title {
+  font-family: 'STIX Two Text', serif; /* Шрифт STIX Two Text */
+  font-size: 60px; /* Размер шрифта */
+  color: var(--text-color); /* Цвет текста из переменных */
+}
+
+/* Стили для подзаголовка карточки */
+.content__card-subtitle {
+  font-family: 'Raleway', sans-serif; /* Шрифт Raleway */
+  font-size: 18px; /* Размер шрифта */
+  color: var(--text-color); /* Цвет текста из переменных */
+}
+
+/* Стили для выделения текста (old idea) */
+.colored-text {
+  position: relative; /* Для позиционирования псевдоэлемента */
+  display: inline-block; /* Чтобы псевдоэлемент был привязан к тексту */
+}
+
+/* Псевдоэлемент для подчеркивания */
+.colored-text::after {
+  content: ''; /* Создаем псевдоэлемент */
+  position: absolute; /* Абсолютное позиционирование */
+  left: -10%; /* Расширяем полосу за пределы текста */
+  right: -10%; /* Расширяем полосу за пределы текста */
+  bottom: 50%; /* Размещаем по центру по вертикали */
+  height: 1.2em; /* Высота полосы (привязана к размеру текста) */
+  background-color: var(--accent-color); /* Цвет фона из переменных */
+  z-index: -1; /* Отправляем на задний план */
+}
+
+/* Темная тема */
+.theme_dark .content__card {
+  border-color: #B3B3B3; /* Цвет обводки для темной темы */
+}
